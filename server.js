@@ -4,13 +4,21 @@ const drinks = require('./models/drinks')//required by your server.js
 PORT = 3000
 
 
+
+// HOME ROUTE
 app.get("/", (req, res) => {
   res.send('Welcome to the GitPub App!');
 });
 
+// INDEX ROUTE - GET to /drinks - Returns all drinks
 app.get('/drinks', (req,res)=>{
-  res.send(drinks)
-})
+  res.render("drinks_index.ejs")
+  //,
+  //{
+  //  allDrinks:drinks
+  //}
+  //);
+});
 
 //app.use(drinks);//middleware to use the routes the fruits in controller folder
 
